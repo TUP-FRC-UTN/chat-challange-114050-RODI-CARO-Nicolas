@@ -1,0 +1,8 @@
+.chatroom {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.message p {
+    border-bottom: 1rem solid #ddd;
+}

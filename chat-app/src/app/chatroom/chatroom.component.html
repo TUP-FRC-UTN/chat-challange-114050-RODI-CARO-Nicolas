@@ -1,21 +1,37 @@
-<div>
-    <app-chatinput
-    [nombreUsuarioParam]="userName1"
-    (mensajeEnviado)="onMensajeEnviado($event)"
-    >
-    </app-chatinput>
-
-    <app-chatinput
-    [nombreUsuarioParam]="userName2"
-    (mensajeEnviado)="onMensajeEnviado($event)"
-    >
-    </app-chatinput>
-
-    <div>
-        @for(item of messages; track item){
-            <p> <strong>{{item.nombreUsuario}}</strong> {{item.contenidoMensaje}} </p>
-        }
+<div class="chatroom container-fluid mt-4">
+    <div class="row">
+        <div class="col-md-10 col-lg-8 mx-auto">
+            <div class="d-flex justify-content-between">
+                <app-chatinput
+                [nombreUsuarioParam]="userName1"
+                (mensajeEnviado)="onMensajeEnviado($event)"
+                >
+                </app-chatinput>
+                <app-chatinput
+                [nombreUsuarioParam]="userName2"
+                (mensajeEnviado)="onMensajeEnviado($event)"
+                >
+                </app-chatinput>
+            </div>
+        </div>
     </div>
+
+    <div class="row mt-4">
+        <div class="col-md-10 col-lg-8 mx-auto">
+            <div class="messages">
+                @for(item of messages; track item){
+                    <p> <strong>{{item.nombreUsuario}}</strong> {{item.contenidoMensaje}} </p>
+                }
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+  
 
 
 </div>
