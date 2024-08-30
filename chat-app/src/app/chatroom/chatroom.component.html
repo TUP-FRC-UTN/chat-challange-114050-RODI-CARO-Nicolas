@@ -1,0 +1,21 @@
+<div>
+    <app-chatinput
+    [nombreUsuarioParam]="userName1"
+    (mensajeEnviado)="onMensajeEnviado($event)"
+    >
+    </app-chatinput>
+
+    <app-chatinput
+    [nombreUsuarioParam]="userName2"
+    (mensajeEnviado)="onMensajeEnviado($event)"
+    >
+    </app-chatinput>
+
+    <div>
+        @for(item of messages; track item){
+            <p> <strong>{{item.nombreUsuario}}</strong> {{item.contenidoMensaje}} </p>
+        }
+    </div>
+
+
+</div>
